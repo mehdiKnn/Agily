@@ -1,0 +1,20 @@
+{
+  "01d": "clear.webp",
+  "01n": "clear.webp",
+  "02n": "fewclouds.webp",
+  "03n": "scatteredclouds.webp",
+  "04n": "brokenclouds.webp",
+  "09n": "heavyrain.webp",
+  "10n": "rain.webp",
+  "11n": "thunderstorm.web",
+  "13n": "snow.webp",
+  "50n": "mist.webp",
+  "02d": "fewclouds.webp",
+  "03d": "scatteredclouds.webp",
+  "04d": "brokenclouds.webp",
+  "09d": "heavyrain.webp",
+  "10d": "rain.webp",
+  "11d": "thunderstorm.web",
+  "13d": "snow.webp",
+  "50d": "mist.webp"
+}
