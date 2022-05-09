@@ -28,7 +28,10 @@
     <div id="list">
       <div @click="switchFocus(index)" class="preview" :key="index" v-for="(data,index) in forecast.daily">
         <img class="icon" :src="generateUrl(data['weather']['0']['icon'])" alt="weather_icon">
-        <span class="day">{{ toFormat(data['dt']) }}</span>
+        <div class="date">
+          <span class="day">{{ toDayOfWeek(data['dt']) }}</span>
+          <span> {{ toDayNbOfWeek(data['dt']) }}</span>
+        </div>
         <span class="temp">{{ Math.round(data['temp']['day']) }}°C</span>
       </div>
     </div>
@@ -56,6 +59,13 @@ export default {
   methods: {
     toFormat(date) {
       return moment.unix(date).locale('fr').format('dddd D MMMM')
+    },
+    toDayOfWeek(date){
+      return moment.unix(date).locale('fr').format('dddd')
+
+    },
+    toDayNbOfWeek(date){
+      return moment.unix(date).locale('fr').format('D MMMM')
     },
     generateUrl(icon) {
       return `https://openweathermap.org/img/wn/${icon}@2x.png`
@@ -148,11 +158,18 @@ export default {
 
 .day {
   font-weight: bolder;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.date{
+  display: flex;
+  flex-direction: column;
 }
 
 .temp {
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 30px;
 }
 @media screen and (max-width: 768px){
     .preview{

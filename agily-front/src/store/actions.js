@@ -9,10 +9,10 @@ export default {
             }
         })
             .then((response) => {
+                commit('setImg', response.data.daily[0]['weather'][0]['icon'])
                 commit('setFocused', response.data.daily[0])
                 commit('setToday', response.data.daily[0])
                 commit('setForecast', response.data)
-                commit('setImg', response.data.daily[0]['weather'][0]['icon'])
                 router.push('/weather')
             })
         //TODO: Gestion des erreurs
