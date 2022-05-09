@@ -10,8 +10,6 @@ app.use(express.json())
 const verifyCache = (req, res, next) => {
     try {
         const name = req.query.search
-        console.log(name)
-        console.log(cache.get("data"))
         if (cache.has("data")){
             return res.status(200).json(cache.get("data"))
         }
